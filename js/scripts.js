@@ -73,10 +73,10 @@ function CheckWin() {
         let bloco2Child = bloco2.childNodes[0].className;
         let bloco3Child = bloco3.childNodes[0].className;
 
-        if (bloco1Child == 'x' && bloco2Child == 'x' && bloco3Child == 'x') {
+        if (bloco1Child === 'x' && bloco2Child === 'x' && bloco3Child === 'x') {
             //x venceu
             declareWinner('x');
-        } else if (bloco1Child == 'o' && bloco2Child == 'o' && bloco3Child == 'o') {
+        } else if (bloco1Child === 'o' && bloco2Child === 'o' && bloco3Child === 'o') {
             //o venceu
             declareWinner('o');
         }
@@ -87,10 +87,10 @@ function CheckWin() {
         let bloco5Child = bloco5.childNodes[0].className;
         let bloco6Child = bloco6.childNodes[0].className;
 
-        if (bloco4Child == 'x' && bloco5Child == 'x' && bloco6Child == 'x') {
+        if (bloco4Child === 'x' && bloco5Child === 'x' && bloco6Child === 'x') {
             //x venceu
             declareWinner('x');
-        } else if (bloco4Child == 'o' && bloco5Child == 'o' && bloco6Child == 'o') {
+        } else if (bloco4Child === 'o' && bloco5Child === 'o' && bloco6Child === 'o') {
             //o venceu
             declareWinner('o');
         }
@@ -100,10 +100,10 @@ function CheckWin() {
         let bloco8Child = bloco8.childNodes[0].className;
         let bloco9Child = bloco9.childNodes[0].className;
 
-        if (bloco7Child == 'x' && bloco8Child == 'x' && bloco9Child == 'x') {
+        if (bloco7Child === 'x' && bloco8Child === 'x' && bloco9Child === 'x') {
             //x venceu
             declareWinner('x');
-        } else if (bloco7Child == 'o' && bloco8Child == 'o' && bloco9Child == 'o') {
+        } else if (bloco7Child === 'o' && bloco8Child === 'o' && bloco9Child === 'o') {
             //o venceu
             declareWinner('o');
         }
@@ -113,10 +113,10 @@ function CheckWin() {
         let bloco4Child = bloco4.childNodes[0].className;
         let bloco7Child = bloco7.childNodes[0].className;
 
-        if (bloco1Child == 'x' && bloco4Child == 'x' && bloco7Child == 'x') {
+        if (bloco1Child === 'x' && bloco4Child === 'x' && bloco7Child === 'x') {
             //x venceu
             declareWinner('x');
-        } else if (bloco1Child == 'o' && bloco4Child == 'o' && bloco7Child == 'o') {
+        } else if (bloco1Child === 'o' && bloco4Child === 'o' && bloco7Child === 'o') {
             //o venceu
             declareWinner('o');
         }
@@ -126,10 +126,10 @@ function CheckWin() {
         let bloco5Child = bloco5.childNodes[0].className;
         let bloco8Child = bloco8.childNodes[0].className;
 
-        if (bloco2Child == 'x' && bloco5Child == 'x' && bloco8Child == 'x') {
+        if (bloco2Child === 'x' && bloco5Child === 'x' && bloco8Child === 'x') {
             //x venceu
             declareWinner('x');
-        } else if (bloco2Child == 'o' && bloco5Child == 'o' && bloco8Child == 'o') {
+        } else if (bloco2Child === 'o' && bloco5Child === 'o' && bloco8Child === 'o') {
             //o venceu
             declareWinner('o');
         }
@@ -139,10 +139,10 @@ function CheckWin() {
         let bloco6Child = bloco6.childNodes[0].className;
         let bloco9Child = bloco9.childNodes[0].className;
 
-        if (bloco3Child == 'x' && bloco6Child == 'x' && bloco9Child == 'x') {
+        if (bloco3Child === 'x' && bloco6Child === 'x' && bloco9Child === 'x') {
             //x venceu
             declareWinner('x');
-        } else if (bloco3Child == 'o' && bloco6Child == 'o' && bloco9Child == 'o') {
+        } else if (bloco3Child === 'o' && bloco6Child === 'o' && bloco9Child === 'o') {
             //o venceu
             declareWinner('o');
         }
@@ -152,10 +152,10 @@ function CheckWin() {
         let bloco5Child = bloco5.childNodes[0].className;
         let bloco9Child = bloco9.childNodes[0].className;
 
-        if (bloco1Child == 'x' && bloco5Child == 'x' && bloco9Child == 'x') {
+        if (bloco1Child === 'x' && bloco5Child === 'x' && bloco9Child === 'x') {
             //x venceu
             declareWinner('x');
-        } else if (bloco1Child == 'o' && bloco5Child == 'o' && bloco9Child == 'o') {
+        } else if (bloco1Child === 'o' && bloco5Child === 'o' && bloco9Child === 'o') {
             //o venceu
             declareWinner('o');
         }
@@ -165,10 +165,10 @@ function CheckWin() {
         let bloco5Child = bloco5.childNodes[0].className;
         let bloco7Child = bloco7.childNodes[0].className;
 
-        if (bloco3Child == 'x' && bloco5Child == 'x' && bloco7Child == 'x') {
+        if (bloco3Child === 'x' && bloco5Child === 'x' && bloco7Child === 'x') {
             //x venceu
             declareWinner('x');
-        } else if (bloco3Child == 'o' && bloco5Child == 'o' && bloco7Child == 'o') {
+        } else if (bloco3Child === 'o' && bloco5Child === 'o' && bloco7Child === 'o') {
             //o venceu
             declareWinner('o');
         }
@@ -180,8 +180,8 @@ function CheckWin() {
             counter++;
         }
     }
-    if (counter == 9) {
-        declareWinner('Ninguém venceu!');
+    if (counter === 9) {
+        declareWinner();
     }
 
     function declareWinner(winner) {
@@ -189,10 +189,11 @@ function CheckWin() {
         let scoreboardO = document.querySelector("#scoreboard-2");
         let msg = '';
 
-        if (winner == 'x') {
+
+        if (winner === 'x') {
             scoreboardX.textContent = parseInt(scoreboardX.textContent) + 1;
             msg = 'O jogador 1 venceu!';
-        } else if (winner == 'o') {
+        } else if (winner === 'o') {
             scoreboardO.textContent = parseInt(scoreboardO.textContent) + 1;
             msg = 'O jogador 2 venceu!'
         } else {
@@ -202,7 +203,7 @@ function CheckWin() {
         setTimeout(function () {
             messageText.innerHTML = msg;
             messageContainer.classList.remove("hide");
-        }, 250)
+        }, 350)
         setTimeout(function () {
             messageContainer.classList.add("hide");
             let boxesRemove = document.querySelectorAll(".box div");
@@ -220,10 +221,10 @@ function computerPlay() {
     let cloneO = o.cloneNode(true);
     counter = 0;
     filled = 0;
-    
+
     for (let i = 0; i < boxes.length; i++) {
         let randomN = Math.floor(Math.random() * 5);
-        if (boxes[i].childNodes[0] == undefined) {
+        if (boxes[i].childNodes[0] === undefined) {
             if (randomN <= 1) {
                 boxes[i].appendChild(cloneO);
                 counter++;
@@ -234,7 +235,7 @@ function computerPlay() {
         }
     }
 
-    if (counter == 0 && filled < 9) {
+    if (counter === 0 && filled < 9) {
         computerPlay();
     }
 }
