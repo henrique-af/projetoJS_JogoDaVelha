@@ -22,7 +22,9 @@ for (let i = 0; i < boxes.length; i++) {
                 player1++;
 
                 if (secondPlayer == "ia-jogador") {
-                    computerPlay();
+                    sleep(600).then(() => {
+                        computerPlay();
+                    });
                     player2++;
                 }
             } else {
@@ -68,7 +70,7 @@ function CheckWin() {
     let bloco8 = document.getElementById("block-8");
     let bloco9 = document.getElementById("block-9");
 
-    if (bloco1.childNodes.length > 0 && bloco2.childNodes.length > 0 && bloco3.childNodes.length) {
+    if (bloco1.childNodes.length > 0 && bloco2.childNodes.length > 0 && bloco3.childNodes.length > 0) {
         let bloco1Child = bloco1.childNodes[0].className;
         let bloco2Child = bloco2.childNodes[0].className;
         let bloco3Child = bloco3.childNodes[0].className;
@@ -82,7 +84,7 @@ function CheckWin() {
         }
     }
 
-    if (bloco4.childNodes.length > 0 && bloco5.childNodes.length > 0 && bloco6.childNodes.length) {
+    if (bloco4.childNodes.length > 0 && bloco5.childNodes.length > 0 && bloco6.childNodes.length > 0) {
         let bloco4Child = bloco4.childNodes[0].className;
         let bloco5Child = bloco5.childNodes[0].className;
         let bloco6Child = bloco6.childNodes[0].className;
@@ -95,7 +97,7 @@ function CheckWin() {
             declareWinner('o');
         }
     }
-    if (bloco7.childNodes.length > 0 && bloco8.childNodes.length > 0 && bloco9.childNodes.length) {
+    if (bloco7.childNodes.length > 0 && bloco8.childNodes.length > 0 && bloco9.childNodes.length > 0) {
         let bloco7Child = bloco7.childNodes[0].className;
         let bloco8Child = bloco8.childNodes[0].className;
         let bloco9Child = bloco9.childNodes[0].className;
@@ -108,7 +110,7 @@ function CheckWin() {
             declareWinner('o');
         }
     }
-    if (bloco1.childNodes.length > 0 && bloco4.childNodes.length > 0 && bloco7.childNodes.length) {
+    if (bloco1.childNodes.length > 0 && bloco4.childNodes.length > 0 && bloco7.childNodes.length > 0) {
         let bloco1Child = bloco1.childNodes[0].className;
         let bloco4Child = bloco4.childNodes[0].className;
         let bloco7Child = bloco7.childNodes[0].className;
@@ -121,7 +123,7 @@ function CheckWin() {
             declareWinner('o');
         }
     }
-    if (bloco2.childNodes.length > 0 && bloco5.childNodes.length > 0 && bloco8.childNodes.length) {
+    if (bloco2.childNodes.length > 0 && bloco5.childNodes.length > 0 && bloco8.childNodes.length > 0) {
         let bloco2Child = bloco2.childNodes[0].className;
         let bloco5Child = bloco5.childNodes[0].className;
         let bloco8Child = bloco8.childNodes[0].className;
@@ -134,7 +136,7 @@ function CheckWin() {
             declareWinner('o');
         }
     }
-    if (bloco3.childNodes.length > 0 && bloco6.childNodes.length > 0 && bloco9.childNodes.length) {
+    if (bloco3.childNodes.length > 0 && bloco6.childNodes.length > 0 && bloco9.childNodes.length > 0) {
         let bloco3Child = bloco3.childNodes[0].className;
         let bloco6Child = bloco6.childNodes[0].className;
         let bloco9Child = bloco9.childNodes[0].className;
@@ -147,7 +149,7 @@ function CheckWin() {
             declareWinner('o');
         }
     }
-    if (bloco1.childNodes.length > 0 && bloco5.childNodes.length > 0 && bloco9.childNodes.length) {
+    if (bloco1.childNodes.length > 0 && bloco5.childNodes.length > 0 && bloco9.childNodes.length > 0) {
         let bloco1Child = bloco1.childNodes[0].className;
         let bloco5Child = bloco5.childNodes[0].className;
         let bloco9Child = bloco9.childNodes[0].className;
@@ -160,7 +162,7 @@ function CheckWin() {
             declareWinner('o');
         }
     }
-    if (bloco3.childNodes.length > 0 && bloco5.childNodes.length > 0 && bloco7.childNodes.length) {
+    if (bloco3.childNodes.length > 0 && bloco5.childNodes.length > 0 && bloco7.childNodes.length > 0) {
         let bloco3Child = bloco3.childNodes[0].className;
         let bloco5Child = bloco5.childNodes[0].className;
         let bloco7Child = bloco7.childNodes[0].className;
@@ -180,7 +182,7 @@ function CheckWin() {
             counter++;
         }
     }
-    if (counter === 9) {
+    if (counter == 9) {
         declareWinner();
     }
 
@@ -189,14 +191,14 @@ function CheckWin() {
         let scoreboardO = document.querySelector("#scoreboard-2");
         let msg = '';
 
-
+        // await sleep(2000);
         if (winner === 'x') {
             scoreboardX.textContent = parseInt(scoreboardX.textContent) + 1;
             msg = 'O jogador 1 venceu!';
         } else if (winner === 'o') {
             scoreboardO.textContent = parseInt(scoreboardO.textContent) + 1;
             msg = 'O jogador 2 venceu!'
-        } else {
+        } else if (winner != 'o' || 'x') {
             msg = 'Ninguém venceu!';
         }
 
@@ -215,6 +217,10 @@ function CheckWin() {
         player1 = 0;
         player2 = 0;
     }
+}
+
+function sleep(ms) { //implementação de um sleep
+    return new Promise(resolve => setTimeout(resolve, ms));
 }
 
 function computerPlay() {
